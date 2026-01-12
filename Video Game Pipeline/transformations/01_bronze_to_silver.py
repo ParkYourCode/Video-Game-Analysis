@@ -33,3 +33,39 @@ def kaggle_games():
     df = df.filter(col("global_sales") >= 1)
     return df.orderBy(col("id").asc())
 
+# --- Clean IGDB data ---
+@dp.table(
+    name=f"{catalog}.{silver_schema}.igdb_games",
+    comment="Cleaned IGDB games",
+    table_properties={
+        "quality": "silver"
+    }
+)
+@dp.expect_all_or_drop({
+    "valid_id": "id > 0 AND id = int(id)",
+    "valid_release_date": "release_date IS NOT NULL",
+    "valid_name": "name IS NOT NULL",
+    "valid_rating": "rating >= 0",
+    "valid_rating_count": "rating_count >= 0",
+    "valid_want_to_play_score": "want_to_play_score >= 0",
+    "valid_played_score": "played_score >= 0",
+    "valid_total_reviews_score": "total_reviews_score >= 0"
+})
+def igdb_games():
+    df = spark.read.table("workspace.01_bronze.igdb_games")
+
+    return (
+        df.select([col(c).alias(c.lower()) for c in df.columns])
+        .withColumnRenamed("first_release_date", "release_date")
+        .withColumn("release_date", to_date(col("release_date")))
+        .withColumnRenamed("total_rating", "rating")
+        .withColumnRenamed("total_rating_count", "rating_count")
+        .withColumn("rating_count", col("rating_count").cast("int"))
+        .drop("visits_score", "playing_score", "negative_reviews_score", "global_top_sellers_score", "34_score")
+    )
+
+
+
+
+
+
