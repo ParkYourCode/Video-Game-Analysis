@@ -63,9 +63,3 @@ def igdb_games():
         .withColumn("rating_count", col("rating_count").cast("int"))
         .drop("visits_score", "playing_score", "negative_reviews_score", "global_top_sellers_score", "34_score")
     )
-
-
-
-
-
-
