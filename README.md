@@ -23,7 +23,5 @@ Video Game Sales Analysis is a personal project that aims to provide insightful 
 * ![image](https://img.shields.io/badge/Python-FFD43B?style=for-the-badge&logo=python&logoColor=blue)
 * ![image](https://img.shields.io/badge/PostgreSQL-green?style=for-the-badge)
 * ![image](https://img.shields.io/badge/PowerBI-F2C811?style=for-the-badge&logo=Power%20BI&logoColor=white)
-* ![image](https://img.shields.io/badge/Supabase-181818?style=for-the-badge&logo=supabase&logoColor=white)
-* ![image](https://img.shields.io/badge/dbt-FF694B?style=for-the-badge&logo=dbt&logoColor=white)
-* ![image](https://img.shields.io/badge/PyCharm-000000.svg?&style=for-the-badge&logo=PyCharm&logoColor=white)
+* ![image](https://img.shields.io/badge/Databricks-FF3621?logo=databricks&logoColor=fff)
 * ![image](https://img.shields.io/badge/Pandas-2C2D72?style=for-the-badge&logo=pandas&logoColor=white)
