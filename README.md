@@ -17,7 +17,9 @@ The dataset combines historical video game sales data from [Kaggle](https://www.
 * Nintendo platforms dominate: Wii (4.3M/title), GB (3.5M), NES (3.4M) lead the industry.
   * XBOX 360's 212 titles average only 2.9M vs Wii's 140 at 4.3M
   * High quality is favorable over maximizing releases
-* NA dominates gaming industry by 50% of global sales, with 29% Europe, 12% Japan, and 9% for other regions.     
+* NA dominates gaming industry by 50% of global sales, with 29% Europe, 12% Japan, and 9% for other regions.
+* Hidden Gems:
+  *  
 
 ## 🔧 Tools
 * ![image](https://img.shields.io/badge/Python-FFD43B?style=for-the-badge&logo=python&logoColor=blue)
@@ -31,6 +33,7 @@ I created three views: Exec, Sales, and Engagement.
 
 <img width="1410" height="800" alt="image" src="https://github.com/user-attachments/assets/38673a8b-a724-4cdb-8f03-0cb5ea84fe3d" />
 <img width="1410" height="800" alt="image" src="https://github.com/user-attachments/assets/f2530cdb-5b53-408b-b34e-65a5707b5514" />
-<img width="1410" height="800" alt="image" src="https://github.com/user-attachments/assets/62f39e68-c110-4596-acbf-ad215749d951" />
+<img width="1410" height="800" alt="image" src="https://github.com/user-attachments/assets/ee609581-1c9f-4969-8bec-78cda7ec0343" />
+
 
 
