@@ -18,8 +18,6 @@ The dataset combines historical video game sales data from [Kaggle](https://www.
   * XBOX 360's 212 titles average only 2.9M vs Wii's 140 at 4.3M
   * High quality is favorable over maximizing releases
 * NA dominates gaming industry by 50% of global sales, with 29% Europe, 12% Japan, and 9% for other regions.
-* Hidden Gems:
-  *  
 
 ## 🔧 Tools
 * ![image](https://img.shields.io/badge/Python-FFD43B?style=for-the-badge&logo=python&logoColor=blue)
