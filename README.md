@@ -8,7 +8,7 @@ Publishers get useful insights into how their games perform under various factor
 The dataset combines historical video game sales data from [Kaggle](https://www.kaggle.com/datasets/gregorut/videogamesales) with popularity and metadata from the [IGDB API](https://api-docs.igdb.com/#getting-started), providing a consolidated view of the global gaming market over time.
 
 ## 💎 Insights
-* Gaming industry rewards hits, but not as much as other media like the movie industry.
+* Gaming industry rewards hits, but not as much as other media like in [film](https://deadline.com/2024/01/international-box-office-2023-global-studio-rankings-market-share-1235709538/).
   * Top 10% capture 36% of sales 
   * Mid-tier games ($1.7M-$5.0M in sales) remain viable
   * Implication: More room for AA studios and indie breakouts
