@@ -69,6 +69,8 @@ def igdb_games():
         .withColumnRenamed("total_rating", "rating")
         .withColumnRenamed("total_rating_count", "rating_count")
         .withColumn("rating_count", col("rating_count").cast("int"))
+        .withColumn("want_to_play_score", (col("want_to_play_score") * 10000000).cast("double"))
+        .withColumn("played_score", (col("played_score") * 10000000).cast("double"))
         .fillna(0, subset=["rating", "rating_count", "want_to_play_score", "played_score", "total_reviews_score"])
         .drop("visits_score", "playing_score", "negative_reviews_score", "global_top_sellers_score", "34_score")
     )

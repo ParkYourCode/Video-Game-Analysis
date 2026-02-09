@@ -1,4 +1,4 @@
-from pyspark.sql.functions import col, date_format, initcap, monthname, dayofweek, when, concat, lit, expr, year, month, quarter, monotonically_increasing_id
+from pyspark.sql.functions import col, date_format, initcap, monthname, dayofweek, when, concat, lit, expr, year, month, quarter, monotonically_increasing_id, max, min
 from pyspark import pipelines as dp
 
 catalog = "workspace"
@@ -16,8 +16,17 @@ gold_schema = "03_gold"
 def dim_date():
     igdb_df = spark.read.table(f"{catalog}.{silver_schema}.igdb_games")
 
-    min_date = igdb_df.agg({"release_date": "min"}).collect()[0][0]
-    max_date = igdb_df.agg({"release_date": "max"}).collect()[0][0]
+    row = (
+        igdb_df
+        .agg(
+            min("release_date").alias("min_date"),
+            max("release_date").alias("max_date")
+        )
+        .first()
+    )
+
+    min_date = row["min_date"]
+    max_date = row["max_date"]
 
     date_df = spark.sql(f"""
         SELECT EXPLODE(sequence(to_date('{min_date}'), to_date('{max_date}'), interval 1 day)) as full_date
@@ -141,11 +150,11 @@ def dim_publisher():
 )
 def dim_game():
     kaggle_df = spark.read.table(f"{catalog}.{silver_schema}.kaggle_games")
-
-    game_df = kaggle_df.select("name").distinct()
-
+    
     return (
         kaggle_df
+        .select("name")
+        .distinct()
         .withColumn("game_key", monotonically_increasing_id() + 1)
         .select(
             "game_key",
